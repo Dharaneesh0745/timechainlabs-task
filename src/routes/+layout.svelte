@@ -2,6 +2,7 @@
   import Header from "./../components/Header.svelte";
   import "../app.css";
   import Footer from "../components/Footer.svelte";
+  import RecruitersStroy from "../components/helpers/RecruitersStroy.svelte";
 
   let y = 0;
   let innerHeight = 0;

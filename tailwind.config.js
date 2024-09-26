@@ -2,7 +2,12 @@
 export default {
   content: ["./src/**/*.{html,js,svelte,ts}"],
   theme: {
-    extend: {},
+    extend: {
+      spacing: {
+        "vh-98": "98vh",
+        "vh-99": "99vh",
+      },
+    },
   },
   plugins: [],
 };
