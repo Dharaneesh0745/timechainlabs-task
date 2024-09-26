@@ -32,7 +32,7 @@
     {/each}
   </div>
   <button
-    class="text-white sm:flex hidden hover:bg-blue-500 hover:duration-200 bg-blue-600 px-5 py-2 rounded-md"
+    class="text-white sm:flex hidden text-sm hover:bg-blue-500 hover:duration-200 bg-blue-600 px-5 py-3 rounded-md"
     >Apply Now &nbsp;<i class="fa-solid fa-circle-arrow-right mt-1"></i>
   </button>
   <button class="sm:hidden"><i class="fa-solid fa-bars text-2xl"></i></button>
