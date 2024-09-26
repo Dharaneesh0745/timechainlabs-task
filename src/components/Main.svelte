@@ -2,6 +2,7 @@
   import Benefits from "./helpers/Benefits.svelte";
   import Hero from "./helpers/Hero.svelte";
   import HeroImages from "./helpers/HeroImages.svelte";
+  import HowItWorks from "./helpers/HowItWorks.svelte";
   import RecruitersStroy from "./helpers/RecruitersStroy.svelte";
   import Trusted from "./helpers/Trusted.svelte";
 </script>
@@ -26,5 +27,8 @@
   </section>
   <section>
     <Benefits />
+  </section>
+  <section>
+    <HowItWorks />
   </section>
 </main>

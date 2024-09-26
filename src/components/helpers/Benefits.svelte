@@ -7,9 +7,9 @@
   <div class="flex-1 lg:mt-0 mt-10">
     <h1 class="text-blue-600 font-medium text-xl">BENEFITS</h1>
     <br />
-    <h1 class="text-4xl">Why hire from us?</h1>
+    <h1 class="text-4xl font-medium">Why hire from us?</h1>
     <br />
-    <p class="text-gray-400">
+    <p class="text-gray-400 font-light">
       Together, we're making education accessible and transformative. <br />Join
       us in shaping a brighter future!
     </p>
