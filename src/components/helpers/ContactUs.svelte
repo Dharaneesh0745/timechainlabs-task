@@ -5,7 +5,7 @@
   let companyName: string = "";
   let emailAddress: string = "";
   let phoneNumber: string = "";
-  let countryCode: string = "+1"; // Default country code (e.g., USA)
+  let countryCode: string = "+91"; // Default country code (e.g., USA)
   let selectedCountry: string = "";
   let selectedState: string = "";
   let amount: number | null = null; // Amount field
