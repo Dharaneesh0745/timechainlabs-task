@@ -3,6 +3,7 @@
   import ContactUs from "./helpers/ContactUs.svelte";
   import Hero from "./helpers/Hero.svelte";
   import HeroImages from "./helpers/HeroImages.svelte";
+  import HireTalent from "./helpers/HireTalent.svelte";
   import HowItWorks from "./helpers/HowItWorks.svelte";
   import RecruitersStroy from "./helpers/RecruitersStroy.svelte";
   import Trusted from "./helpers/Trusted.svelte";
@@ -34,5 +35,8 @@
   </section>
   <section>
     <ContactUs />
+  </section>
+  <section>
+    <HireTalent />
   </section>
 </main>
