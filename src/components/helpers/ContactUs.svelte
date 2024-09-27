@@ -174,7 +174,10 @@
       <form on:submit={handleSubmit} class="space-y-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label for="contactName" class="block">Contact Name</label>
+            <label for="contactName" class="block mb-2"
+              >Contact Name
+              <span class="text-red-500 font-bold">*</span>
+            </label>
             <input
               type="text"
               id="contactName"
@@ -186,7 +189,9 @@
               </p>{/if}
           </div>
           <div>
-            <label for="companyName" class="block">Company Name</label>
+            <label for="companyName" class="block mb-2"
+              >Company Name<span class="text-red-500 font-bold">*</span></label
+            >
             <input
               type="text"
               id="companyName"
@@ -198,7 +203,9 @@
               </p>{/if}
           </div>
           <div>
-            <label for="emailAddress" class="block">Email Address</label>
+            <label for="emailAddress" class="block mb-2"
+              >Email Address<span class="text-red-500 font-bold">*</span></label
+            >
             <input
               type="email"
               id="emailAddress"
@@ -210,7 +217,9 @@
               </p>{/if}
           </div>
           <div>
-            <label for="phoneNumber" class="block">Phone No</label>
+            <label for="phoneNumber" class="block mb-2"
+              >Phone No<span class="text-red-500 font-bold">*</span></label
+            >
             <div class="flex">
               <select
                 id="countryCode"
@@ -236,8 +245,10 @@
               </p>{/if}
           </div>
           <div>
-            <label for="selectedCountry" class="block"
-              >Country you're based in</label
+            <label for="selectedCountry" class="block mb-2"
+              >Country you're based in<span class="text-red-500 font-bold"
+                >*</span
+              ></label
             >
             <select
               id="selectedCountry"
@@ -254,8 +265,10 @@
               </p>{/if}
           </div>
           <div>
-            <label for="selectedState" class="block"
-              >City you're operating from</label
+            <label for="selectedState" class="block mb-2"
+              >City you're operating from<span class="text-red-500 font-bold"
+                >*</span
+              ></label
             >
             <select
               id="selectedState"
@@ -275,35 +288,60 @@
 
         <div class="lg:flex flex-row gap-x-3">
           <div class="flex-1">
-            <label for="">Employment type you're offering?</label>
-            <div>
+            <label for="" class="mb-2"
+              >Employment type you're offering?<span
+                class="text-red-500 font-bold">*</span
+              ></label
+            >
+            <div class="mb-1 mt-2">
               <input type="checkbox" name="" id="" />
               <label for="">Full-time Role</label>
             </div>
-            <div>
+            <div class="mb-1">
               <input type="checkbox" name="" id="" />
               <label for="">Part-time Role</label>
             </div>
-            <div>
+            <div class="mb-1">
               <input type="checkbox" name="" id="" />
               <label for="">Internship Role</label>
             </div>
           </div>
           <div class="flex-1">
-            <label for="">Skill Level</label>
-            <div>
+            <label for=""
+              >Skill Level<span class="text-red-500 font-bold">*</span></label
+            >
+            <div class="mt-2 mb-1">
               <input type="checkbox" name="" id="" />
               <label for="">Intermediate Level</label>
             </div>
-            <div>
+            <div class="">
               <input type="checkbox" name="" id="" />
               <label for="">Advanced Level</label>
             </div>
           </div>
         </div>
 
+        <div class="flex-1">
+          <label for=""
+            >Are these position onsite or Remote?<span
+              class="text-red-500 font-bold">*</span
+            ></label
+          >
+          <div class="mt-2 mb-1">
+            <input type="checkbox" name="" id="" />
+            <label for="">Onsite</label>
+          </div>
+          <div class="">
+            <input type="checkbox" name="" id="" />
+            <label for="">Remote</label>
+          </div>
+        </div>
+
         <div>
-          <label for="" class="block">What's your budget?</label>
+          <label for="" class="block mb-2"
+            >What's your budget?<span class="text-red-500 font-bold">*</span
+            ></label
+          >
           <div class="flex items-center">
             <select
               id="currency"
@@ -333,7 +371,11 @@
         </div>
 
         <div>
-          <label for="message" class="block">Message</label>
+          <label for="message" class="block"
+            >Additional Information about role you're look to hire?<span
+              class="text-red-500 font-bold">*</span
+            ></label
+          >
           <textarea
             id="message"
             bind:value={message}

@@ -1,17 +1,36 @@
 <script lang="ts">
+  import { onMount } from "svelte";
+
   let currentIndex: number = 0;
   const images: string[] = [
-    "https://via.placeholder.com/500x400/FF5733/FFFFFF?text=Image+1",
-    "https://via.placeholder.com/500x400/33FF57/FFFFFF?text=Image+2",
-    "https://via.placeholder.com/500x400/3357FF/FFFFFF?text=Image+3",
-    "https://via.placeholder.com/500x400/FF33A1/FFFFFF?text=Image+4",
-    "https://via.placeholder.com/500x400/FF5733/FFFFFF?text=Image+5",
-    "https://via.placeholder.com/500x400/33FF57/FFFFFF?text=Image+6",
-    "https://via.placeholder.com/500x400/3357FF/FFFFFF?text=Image+7",
+    "/rc-11.jpg",
+    "/rc-22.jpg",
+    "/rc-33.jpg",
+    "/rc-11.jpg",
+    "/rc-22.jpg",
+    "/rc-33.jpg",
   ];
 
   let isDragging = false; // Track if the user is dragging
   let startX: number;
+  let windowWidth: number = 0; // Initialize window width
+  let itemsPerRow: number = 3; // Default for desktop
+
+  // Function to update window width
+  function updateWindowWidth() {
+    windowWidth = window.innerWidth;
+    itemsPerRow = windowWidth < 768 ? 1 : 3; // Set items per row based on window width
+  }
+
+  onMount(() => {
+    updateWindowWidth(); // Set initial window width
+    window.addEventListener("resize", updateWindowWidth); // Update width on resize
+
+    // Cleanup on component destroy
+    return () => {
+      window.removeEventListener("resize", updateWindowWidth);
+    };
+  });
 
   function nextImages() {
     currentIndex = (currentIndex + 1) % images.length; // Wrap around to show all images
@@ -90,10 +109,14 @@
     >
       <div
         class="carousel-images"
-        style="transform: translateX(-{currentIndex * (100 / images.length)}%);"
+        style="transform: translateX(-{currentIndex *
+          (100 /
+            itemsPerRow)}%); width: calc(100% * {images.length} / {itemsPerRow});"
       >
-        {#each images as image}
-          <img src={image} alt="Carousel Image" class="carousel-image" />
+        {#each images as image, index}
+          <div class="carousel-item">
+            <img src={image} alt="Carousel Image" class="carousel-image" />
+          </div>
         {/each}
       </div>
     </div>
@@ -111,7 +134,8 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    overflow-x: auto; /* Allow horizontal scrolling */
+    overflow: hidden; /* Hide overflow to show only the current images */
+    width: 100%; /* Ensure carousel takes full width */
   }
 
   .top-buttons {
@@ -132,13 +156,26 @@
   .carousel-images {
     display: flex;
     transition: transform 0.5s ease;
+    /* Width is dynamically set in the inline style */
+  }
+
+  .carousel-item {
+    flex: 0 0 calc(100% / var(--items-per-row)); /* Ensure items take appropriate width */
+    max-width: 100%; /* Avoid overflow */
+    padding: 5px; /* Optional padding between items */
   }
 
   .carousel-image {
-    width: 450px; /* Fixed width for images */
+    width: 90%; /* Adjusted to 100% for responsive design */
     height: auto;
-    margin: 0 5px;
     border-radius: 10px;
+  }
+
+  .caption {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
   }
 
   .arrow {
@@ -154,7 +191,7 @@
     margin: 0 5px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 500px) {
     .top-buttons {
       display: none;
     }
@@ -164,12 +201,15 @@
     }
 
     .carousel {
-      overflow-x: scroll; /* Enable horizontal scrolling for mobile */
+      overflow: hidden; /* Hide overflow for mobile */
+    }
+
+    .carousel-item {
+      flex: 0 0 100%; /* One image at a time on mobile */
     }
 
     .carousel-image {
-      width: 80%; /* Adjust image width for mobile */
-      height: auto;
+      width: 100%; /* Image full width */
     }
 
     .arrow {
@@ -179,9 +219,9 @@
     }
   }
 
-  @media (max-width: 480px) {
-    .carousel-image {
-      width: 90%; /* Adjust image width further for small screens */
+  @media (min-width: 769px) {
+    .carousel-item {
+      flex: 0 0 calc(33.33% - 10px); /* Three images at a time on larger screens */
     }
   }
 </style>

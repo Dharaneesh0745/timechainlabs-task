@@ -7,15 +7,19 @@
   <div
     class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
   >
-    <div class="bg-white rounded-lg p-6 max-w-sm w-full">
-      <h2 class="text-xl font-semibold">Thank You!</h2>
-      <p>Your submission has been received.</p>
-      <div class="flex justify-end mt-4">
+    <div class="bg-white text-center rounded-lg p-6 max-w-sm w-full">
+      <i class="fa-solid fa-envelope text-8xl"></i>
+      <h2 class="text-xl font-semibold">Thank You for Reaching Out!</h2>
+      <p>
+        Your message has been received, and your request will be addressed
+        shortly, Kindly check your mail for update on your request.
+      </p>
+      <div class="flex justify-center mt-4">
         <button
           class="bg-blue-600 text-white px-4 py-2 rounded"
           on:click={onClose}
         >
-          Close
+          Done
         </button>
       </div>
     </div>

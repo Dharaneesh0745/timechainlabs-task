@@ -2,7 +2,7 @@
 
 <main class="mt-16 bg-blue-600 rounded-xl lg:p-10 p-5 mb-10 text-white">
   <div class="flex justify-between">
-    <img src="/logo.png" class="rounded-md h-14" alt="" />
+    <img src="/logo.png" class="rounded-md h-10 lg:h-14" alt="" />
     <span class="text-sm font-semibold my-auto"
       >BACK TO TOP &nbsp; <i class="fa-solid fa-arrow-up"></i></span
     >
@@ -53,6 +53,34 @@
           >Subscribe
         </button>
       </div>
+    </div>
+  </div>
+
+  <div
+    class="lg:flex lg:flex-row flex-col lg:mt-3 justify-between mt-7 text-center text-sm"
+  >
+    <div class="flex-1 lg:flex space-y-6 lg:justify-center">
+      <h1 class="">CONNECT WITH US</h1>
+      <div class="flex gap-x-4 mt-4 lg:-ml-[130px] ml-[75px]">
+        <i class="fa-brands fa-x-twitter"></i>
+        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-discord"></i>
+        <i class="fa-brands fa-youtube"></i>
+      </div>
+    </div>
+    <div class="lg:flex-1 lg:flex hidden space-x-6 my-auto">
+      <span>Terms of Use</span>
+      <span>Privacy Policy</span>
+      <span>Legal</span>
+    </div>
+    <div class="flex-1 mt-6 lg:hidden">
+      <span>Terms | Privacy | Legal</span>
+    </div>
+    <div class="flex- lg:flex mt-7 lg:mt-0 space-x-3 my-auto">
+      <span>© 2024 Timechain Summer of Code</span>
+      <br />
+      <span>All Rights Reserved</span>
     </div>
   </div>
 </main>
