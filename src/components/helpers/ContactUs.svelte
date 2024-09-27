@@ -349,10 +349,10 @@
           {#if errors.message}<p class="text-red-500">{errors.message}</p>{/if}
         </div>
 
-        <div class="flex justify-end">
+        <div class="flex justify-start">
           <button
             type="submit"
-            class="bg-green-600 text-white rounded px-4 py-2"
+            class="bg-blue-600 text-sm hover:bg-blue-500 duration-200 text-white rounded px-4 py-2"
           >
             Submit
           </button>
