@@ -1,5 +1,6 @@
 <script>
   import Benefits from "./helpers/Benefits.svelte";
+  import ContactUs from "./helpers/ContactUs.svelte";
   import Hero from "./helpers/Hero.svelte";
   import HeroImages from "./helpers/HeroImages.svelte";
   import HowItWorks from "./helpers/HowItWorks.svelte";
@@ -28,7 +29,10 @@
   <section>
     <Benefits />
   </section>
-  <section>
+  <section id="#howItWorks">
     <HowItWorks />
+  </section>
+  <section>
+    <ContactUs />
   </section>
 </main>

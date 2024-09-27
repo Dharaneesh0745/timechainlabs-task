@@ -1,6 +1,9 @@
 <script></script>
 
-<main class="lg:mt-24 mt-16 flex flex-col lg:flex-row gap-x-32">
+<main
+  id="#howItWorks"
+  class="lg:mt-24 mt-16 flex flex-col lg:flex-row gap-x-32"
+>
   <!-- Image Container (Images first on mobile, second on desktop) -->
   <div class="flex-1 order-1 lg:order-2">
     <div class="p-6">
