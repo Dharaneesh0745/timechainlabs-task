@@ -1,6 +1,6 @@
 <script></script>
 
-<main class="mt-16 bg-blue-600 rounded-xl lg:p-10 p-5 text-white">
+<main class="mt-16 bg-blue-600 rounded-xl lg:p-10 p-5 mb-10 text-white">
   <div class="flex justify-between">
     <img src="/logo.png" class="rounded-md h-14" alt="" />
     <span class="text-sm font-semibold my-auto"

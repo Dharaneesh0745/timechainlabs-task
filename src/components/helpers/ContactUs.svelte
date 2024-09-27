@@ -1,4 +1,6 @@
 <script lang="ts">
+  import Modal from "./Modal.svelte"; // Adjust the import path as necessary
+
   let contactName: string = "";
   let companyName: string = "";
   let emailAddress: string = "";
@@ -109,6 +111,8 @@
     );
   };
 
+  let showModal: boolean = false; // State for modal visibility
+
   const handleSubmit = (e: Event): void => {
     e.preventDefault();
     if (validate()) {
@@ -125,6 +129,10 @@
         currency,
         message,
       });
+
+      // Show the modal on successful submission
+      showModal = true;
+
       // Reset the form fields
       contactName = "";
       companyName = "";
@@ -137,6 +145,10 @@
       currency = "";
       message = "";
     }
+  };
+
+  const closeModal = () => {
+    showModal = false;
   };
 </script>
 
@@ -285,23 +297,8 @@
             </div>
             <div>
               <input type="checkbox" name="" id="" />
-              <label for="">Junior Level</label>
+              <label for="">Advanced Level</label>
             </div>
-            <div>
-              <input type="checkbox" name="" id="" />
-              <label for="">Senior Level</label>
-            </div>
-          </div>
-        </div>
-        <div>
-          <label for="">Are these position Onsite or Remote?</label>
-          <div>
-            <input type="checkbox" name="" id="" />
-            <label for="">Onsite</label>
-          </div>
-          <div>
-            <input type="checkbox" name="" id="" />
-            <label for="">Remote</label>
           </div>
         </div>
 
@@ -336,30 +333,24 @@
         </div>
 
         <div>
-          <label for="message" class="block"
-            >Additional Information about role you're look to hire?*</label
-          >
+          <label for="message" class="block">Message</label>
           <textarea
             id="message"
             bind:value={message}
             class="border rounded p-2 w-full"
-            rows="4"
-            placeholder="Enter your message"
           ></textarea>
           {#if errors.message}<p class="text-red-500">{errors.message}</p>{/if}
         </div>
 
-        <div class="flex justify-start">
-          <button
-            type="submit"
-            class="bg-blue-600 text-sm hover:bg-blue-500 duration-200 text-white rounded px-4 py-2"
-          >
-            Submit
-          </button>
-        </div>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">
+          Submit
+        </button>
       </form>
     </div>
   </div>
+
+  <Modal {showModal} onClose={closeModal} />
+  <!-- Include the modal here -->
 </main>
 
 <style>
