@@ -1,6 +1,7 @@
 <script>
   import Benefits from "./helpers/Benefits.svelte";
   import ContactUs from "./helpers/ContactUs.svelte";
+  import Footer from "./helpers/Footer.svelte";
   import Hero from "./helpers/Hero.svelte";
   import HeroImages from "./helpers/HeroImages.svelte";
   import HireTalent from "./helpers/HireTalent.svelte";
@@ -38,5 +39,8 @@
   </section>
   <section>
     <HireTalent />
+  </section>
+  <section>
+    <Footer />
   </section>
 </main>
